@@ -1,3 +1,15 @@
+docker/inputs/*
+inputs/**/*.jpg
+inputs/**/*.jpeg
+inputs/**/*.png
+inputs/**/*.h5
+inputs/**/*.tif
+inputs/**/*.tiff
+.idea/
+outputs/*
+**/events.out.tfevents.*
+**/*.pt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

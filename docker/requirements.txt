@@ -1,0 +1,17 @@
+numpy
+torch
+torchvision
+psutil
+tqdm
+tifffile
+pynvml
+h5py
+opencv-python-headless
+matplotlib
+scipy
+scikit-image
+seaborn
+pillow
+pynvml>=11.0.0
+imageio
+imagecodecs
