@@ -53,6 +53,15 @@ python inference.py -i inputs/neurips_data/unlabeled_patches -o output_folder
 python inference.py -i inputs/neurips_data/unlabeled_patches -o inputs/pseudo_labels0 --outtype=h5
 ```
 
+## Models
+A trained CPN can be found [here](https://celldetection.org/torch/models/ginoro.pt).
+Use it as follows:
+```python
+pt = torch.load(model_name, map_location=device)
+model = neurips.nn.build_cpn_model(pt['config'])
+model.load_state_dict(pt['state_dict'])
+```
+
 ## Docker
 - Saved models can be exported for docker via `python export_model.py -i model.pt -o ./exported_models`
 - Place the exported model in the `docker` directory and adapt `predict.sh`.
