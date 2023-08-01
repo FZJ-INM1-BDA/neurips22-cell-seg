@@ -63,6 +63,19 @@ model.load_state_dict(pt['state_dict'])
 ```
 
 ## Docker
+Find the full list of docker images [here](https://hub.docker.com/repository/docker/ericup/neurips22-cell-seg/tags?page=1&ordering=last_updated).
+
+1. Docker pull:
+    ```
+    docker pull ericup/neurips22-cell-seg:v0.0.1
+    ```
+2. Docker run
+    ```
+    docker container run --gpus="device=0" --name cells --rm -v $PWD/inputs/:/workspace/inputs/ -v $PWD/cells_outputs/:/workspace/outputs/ ericup/neurips22-cell-seg:v0.0.1 /bin/bash -c "sh predict.sh"
+    ```
+The latter will process all images from a directory called `inputs` and write results to a directory called `cells_outputs`.
+
+## Build Docker
 - Saved models can be exported for docker via `python export_model.py -i model.pt -o ./exported_models`
 - Place the exported model in the `docker` directory and adapt `predict.sh`.
 - The following snippet creates and loads a docker solution:
