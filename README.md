@@ -61,6 +61,8 @@ pt = torch.load(model_name, map_location=device)
 model = neurips.nn.build_cpn_model(pt['config'])
 model.load_state_dict(pt['state_dict'])
 ```
+This model is also accessible via the `celldetection` package.
+Have a look at our [Colab inference demo](https://colab.research.google.com/drive/1Ycc2X131lmlU50Ds8iz8o0KSgLWDjO9H).
 
 ## Docker
 Find the full list of docker images [here](https://hub.docker.com/repository/docker/ericup/neurips22-cell-seg/tags?page=1&ordering=last_updated).
